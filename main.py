@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     #rollback of  CNF
     #rollback_revision_CNF(commands,NAMESPACE,NAME_HELM_DEP, OLD_HELM_REVISION)
-#
+
     #terminate CNF
     #clean_CNF(commands, NAMESPACE, NAME_HELM_DEP)
 
