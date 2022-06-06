@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     #list_pods_namespace("free5gc")
     #clean_namespace(NAMESPACE)
-
+#
     #delete namespace
     #list_pods_namespace(NAMESPACE)
 
