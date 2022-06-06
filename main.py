@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     #instiate_CNF(commands,'free5gc','free5gc-v1','https://raw.githubusercontent.com/Orange-OpenSource/towards5gs-helm/main/repo/free5gc-0.1.0.tgz','https://raw.githubusercontent.com/Orange-OpenSource/towards5gs-helm/main/charts/free5gc/values.yaml')
     instiate_CNF(commands,NAMESPACE,NAME_HELM_DEP,CHART_NAME_URL,CHART_VALUES_URL)
-
+#
     #update_CNF
     #update_via_cli(commands, NAMESPACE, NAME_HELM_DEP, CHART_NAME_URL, SETS)
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     #rollback of  CNF
     #rollback_revision_CNF(commands,NAMESPACE,NAME_HELM_DEP, OLD_HELM_REVISION)
-
+#
     #terminate CNF
     #clean_CNF(commands, NAMESPACE, NAME_HELM_DEP)
 
