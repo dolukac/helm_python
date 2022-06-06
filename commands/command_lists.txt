@@ -1,0 +1,9 @@
+kubectl get --raw=/readyz?verbose
+helm -n {NAMESPACE} install {NAME_HELM_DEP} {CHART_NAME_URL} -f {CHART_VALUES_URL}
+kubectl get namespace
+helm -n {NAMESPACE} upgrade {NAME_HELM_DEP} {CHART_NAME_URL} {SETS}
+helm history {NAME_HELM_DEP} -n {NAMESPACE}
+helm -n {NAMESPACE} upgrade {NAME_HELM_DEP} {CHART_NAME_URL} -f {CHART_VALUES_URL}
+helm -n {NAMESPACE} upgrade {NAME_HELM_DEP} {CHART_NAME_URL} -f {CHART_VALUES_URL}
+helm rollback -n {NAMESPACE} {NAME_HELM_DEP} {OLD_HELM_REVISION}
+helm uninstall -n {NAMESPACE} {NAME_HELM_DEP}
