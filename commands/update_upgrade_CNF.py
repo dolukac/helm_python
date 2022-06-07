@@ -40,7 +40,6 @@ def update_via_yaml(commands,NAMESPACE,NAME_HELM_DEP,CHART_NAME_URL, CHART_VALUE
     update_via_yaml_command = update_via_yaml_command.replace('{CHART_NAME_URL}', CHART_NAME_URL)
     update_via_yaml_command = update_via_yaml_command.replace('{CHART_VALUES_URL}', CHART_VALUES_URL)
 
-
     update_via_yaml_command_check = exec_command(update_via_yaml_command)
     print("-------- UPDATE CNF via YAML")
     print(f"Implementation of command: {update_via_yaml_command}")

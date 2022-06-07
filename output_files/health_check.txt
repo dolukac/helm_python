@@ -76,7 +76,4 @@ readyz check passed
 [+]poststarthook/apiservice-openapi-controller ok
 [+]shutdown ok
 readyz check passed
-02/06/2022 11:26:02
-02/06/2022 11:27:27
-02/06/2022 11:27:52
-02/06/2022 13:37:41
+

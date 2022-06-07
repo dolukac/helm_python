@@ -1,9 +1,9 @@
 from commands.commands import exec_command
 
 from datetime import datetime
-from kubernetes import client, config
-from kubernetes import client, config
+
 import time
+from kubernetes import client, config
 
 def cluster_health_check(health_command):
 #command on check health of kubernetes cluster
@@ -57,7 +57,7 @@ def namespace_check(instiate_CNF_namespace):
     if instiate_CNF_namespace in get_namespaces(v1):
         exist_namespace = v1.read_namespace(instiate_CNF_namespace)
         if exist_namespace.status.phase == 'Active':
-            print("Namespace is active")
+            print(exist_namespace.status.phase,instiate_CNF_namespace)
         else:
             print("Namespace isn't active")
 
@@ -76,5 +76,31 @@ def namespace_check(instiate_CNF_namespace):
                 print("Namespace isn't active")
 
                 return exit()
+
+
+def pod_check(NAMESPACE,NAME_HELM_DEP):
+    config.load_kube_config()
+    v1 = client.CoreV1Api()
+
+    pod_namespace_list=v1.list_namespaced_pod(NAMESPACE)
+    for podNamespace in pod_namespace_list.items:
+        if podNamespace.metadata.name.startswith(NAME_HELM_DEP) and podNamespace.status.phase == 'Running':
+            return ('Running')
+
+
+def pod_list(NAMESPACE):
+    config.load_kube_config()
+    v1 = client.CoreV1Api()
+
+    pod_namespace_list = v1.list_namespaced_pod(NAMESPACE)
+    print("-------- Healthcheck CNF")
+    print(f"Implementation of command: kubectl get pods -n {NAMESPACE}")
+
+    for podNamespace in pod_namespace_list.items:
+        print(podNamespace.status.phase,podNamespace.metadata.name)
+
+
+
+
 
 
