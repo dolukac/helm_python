@@ -1,9 +1,13 @@
 import os
+import subprocess as sp
 
-#execute command and print output
+def exec_command_need(command):
+    output = sp.getoutput(command)
+    return output
+
 def exec_command(command):
-    a= []
-    with os.popen(command) as pipe:
-        for line in pipe:
-            a.append(line.strip())
-    return a
+    output = sp.getoutput(command)
+    if output.startswith('Error'):
+        return output
+    else:
+        return True
